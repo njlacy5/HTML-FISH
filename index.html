@@ -113,8 +113,8 @@ footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font
   <div class="card">
     <div class="card-title">⚙️ Location &amp; Conditions</div>
     <div class="row2">
-      <div><span class="lbl">Latitude</span><input class="inp" id="lat" type="number" step="0.0001" placeholder="38.9072" inputmode="decimal"></div>
-      <div><span class="lbl">Longitude</span><input class="inp" id="lon" type="number" step="0.0001" placeholder="-77.0369" inputmode="decimal"></div>
+      <div><span class="lbl">Latitude</span><input class="inp" id="lat" type="text" placeholder="38.9072" inputmode="decimal"></div>
+      <div><span class="lbl">Longitude</span><input class="inp" id="lon" type="text" placeholder="-77.0369" inputmode="decimal"></div>
     </div>
     <span class="lbl">Water Body</span>
     <select class="inp" id="waterType">
@@ -259,7 +259,7 @@ async function claude(prompt,maxT=900){
   return data.content.filter(b=>b.type==='text').map(b=>b.text).join('').trim();
 }
 
-function pj(raw){return JSON.parse(raw.replace(/^```json?\n?/i,'').replace(/\n?```$/,'').trim());}
+function pj(raw){const c=raw.replace(/^```json?\n?/i,'').replace(/\n?```$/,'').trim();try{return JSON.parse(c);}catch(e){const m=c.match(/\{[\s\S]*\}/);if(m)return JSON.parse(m[0]);throw new Error('Parse error');}}
 
 async function run(){
   const lat=parseFloat(document.getElementById('lat').value);
