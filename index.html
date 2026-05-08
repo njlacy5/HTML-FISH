@@ -10,19 +10,12 @@
 <title>Tight Lines</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --ink:#0e1a12;--paper:#f2ede4;--moss:#3a5a3c;--water:#2c6e7f;
-  --amber:#c8832a;--rust:#9e3a1a;--mist:#a8bfb0;--cream:#e8e0d0;--gold:#d4a942;
-  --sat: env(safe-area-inset-top,0px);--sab: env(safe-area-inset-bottom,0px);
-}
+:root{--ink:#0e1a12;--paper:#f2ede4;--moss:#3a5a3c;--water:#2c6e7f;--amber:#c8832a;--rust:#9e3a1a;--mist:#a8bfb0;--cream:#e8e0d0;--gold:#d4a942;--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;background:var(--paper);overscroll-behavior:none}
 body{font-family:'IBM Plex Sans',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
-.app{min-height:100vh;display:flex;flex-direction:column;
-  background:var(--paper) url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233a5a3c' fill-opacity='0.035'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")}
-header{background:var(--moss);padding:calc(var(--sat) + 14px) 20px 14px;
-  display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--amber);
-  position:sticky;top:0;z-index:100}
+.app{min-height:100vh;display:flex;flex-direction:column;background:var(--paper) url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233a5a3c' fill-opacity='0.035'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")}
+header{background:var(--moss);padding:calc(var(--sat) + 14px) 20px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--amber);position:sticky;top:0;z-index:100}
 .logo{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:900;color:var(--paper)}
 .logo span{color:var(--gold)}
 .hdr-tag{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:var(--mist);letter-spacing:2px;text-transform:uppercase;text-align:right;line-height:1.6}
@@ -38,7 +31,7 @@ header{background:var(--moss);padding:calc(var(--sat) + 14px) 20px 14px;
 .btn-main:disabled{opacity:0.5}
 .btn-sec{width:100%;padding:11px;background:transparent;border:1px solid var(--water);color:var(--water);font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border-radius:2px;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px}
 .btn-sec:active{background:var(--water);color:white}
-.err-box{background:#fff0ee;border:1px solid #e0a090;padding:12px 14px;border-radius:2px;font-size:0.82rem;color:var(--rust);margin-bottom:14px}
+.err-box{background:#fff0ee;border:1px solid #e0a090;padding:12px 14px;border-radius:2px;font-size:0.82rem;color:var(--rust);margin-bottom:14px;word-break:break-word}
 .warn-box{background:#fff8ec;border:1px solid #e8d090;padding:8px 12px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:#7a5a00;margin-bottom:12px;line-height:1.5}
 .spinner{width:30px;height:30px;border:3px solid var(--cream);border-top-color:var(--moss);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 10px}
 .spinner-sm{width:16px;height:16px;border:2px solid var(--cream);border-top-color:var(--moss);border-radius:50%;animation:spin .8s linear infinite;display:inline-block;vertical-align:middle;margin-right:6px}
@@ -72,7 +65,6 @@ header{background:var(--moss);padding:calc(var(--sat) + 14px) 20px 14px;
 .chip{background:var(--gold);color:var(--ink);padding:3px 10px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:.65rem;font-weight:500}
 .divider{border:none;border-top:1px dashed #c0b8a8;margin:14px 0}
 .analysis{font-size:.82rem;line-height:1.65;color:#333}
-/* forecast */
 .fc-list{display:flex;flex-direction:column;gap:9px}
 .fday{background:var(--paper);border:1px solid #d0c8b8;border-radius:2px;padding:12px;cursor:pointer;-webkit-user-select:none;user-select:none}
 .fday.open{border-color:var(--moss);box-shadow:2px 2px 0 var(--moss)}
@@ -108,18 +100,17 @@ footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font
   </div>
   <div class="hdr-tag">BASS &amp;<br>CHANNEL CATFISH</div>
 </header>
-
 <div class="body">
   <div class="card">
-    <div class="card-title">⚙️ Location &amp; Conditions</div>
+    <div class="card-title">&#9881;&#65039; Location &amp; Conditions</div>
     <div class="row2">
       <div><span class="lbl">Latitude</span><input class="inp" id="lat" type="text" placeholder="38.9072" inputmode="decimal"></div>
       <div><span class="lbl">Longitude</span><input class="inp" id="lon" type="text" placeholder="-77.0369" inputmode="decimal"></div>
     </div>
     <span class="lbl">Water Body</span>
     <select class="inp" id="waterType">
-      <option value="small pond (2-3 acres)">Small Pond (2–3 acres)</option>
-      <option value="large pond (5-10 acres)">Large Pond (5–10 acres)</option>
+      <option value="small pond (2-3 acres)">Small Pond (2-3 acres)</option>
+      <option value="large pond (5-10 acres)">Large Pond (5-10 acres)</option>
       <option value="small lake">Small Lake</option>
       <option value="large lake or reservoir">Large Lake / Reservoir</option>
       <option value="river or creek">River / Creek</option>
@@ -130,329 +121,436 @@ footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font
         <select class="inp" id="clarity">
           <option value="clear">Clear</option>
           <option value="slightly stained">Slightly Stained</option>
-          <option value="stained / tannic">Stained / Tannic</option>
+          <option value="stained tannic">Stained / Tannic</option>
           <option value="muddy">Muddy</option>
         </select>
       </div>
-      <div><span class="lbl">Water Temp °F</span><input class="inp" id="waterTemp" type="number" placeholder="Blank=estimate" inputmode="numeric"></div>
+      <div><span class="lbl">Water Temp F</span><input class="inp" id="waterTemp" type="text" placeholder="Blank=estimate" inputmode="numeric"></div>
     </div>
     <span class="lbl">Cover / Structure</span>
     <select class="inp" id="cover">
-      <option value="mixed (docks, laydowns, vegetation)">Mixed (docks, laydowns, weeds)</option>
-      <option value="heavy vegetation and lily pads">Heavy Vegetation / Lily Pads</option>
-      <option value="rocky or hard bottom">Rocky / Hard Bottom</option>
-      <option value="laydowns and brush piles">Laydowns &amp; Brush Piles</option>
-      <option value="open water with minimal cover">Open Water / Minimal Cover</option>
+      <option value="mixed docks laydowns vegetation">Mixed (docks, laydowns, weeds)</option>
+      <option value="heavy vegetation lily pads">Heavy Vegetation / Lily Pads</option>
+      <option value="rocky hard bottom">Rocky / Hard Bottom</option>
+      <option value="laydowns brush piles">Laydowns and Brush Piles</option>
+      <option value="open water minimal cover">Open Water / Minimal Cover</option>
     </select>
-    <button class="btn-main" id="analyzeBtn" onclick="run()">🎣 ANALYZE CONDITIONS</button>
-    <button class="btn-sec" onclick="locate()">📍 USE MY LOCATION</button>
+    <button class="btn-main" id="analyzeBtn" onclick="run()">&#127907; ANALYZE CONDITIONS</button>
+    <button class="btn-sec" onclick="locate()">&#128205; USE MY LOCATION</button>
     <div class="loc-st" id="locSt"></div>
   </div>
-
   <div class="err-box" id="errBox" style="display:none"></div>
   <div class="loading" id="loadBox"><div class="spinner"></div><p id="loadMsg"></p></div>
-
   <div id="results">
     <div class="tab-nav">
-      <button class="tab-btn on" onclick="tab('today',this)">📋 Today</button>
-      <button class="tab-btn" onclick="tab('forecast',this)">📅 10-Day</button>
+      <button class="tab-btn on" onclick="switchTab('today',this)">Today</button>
+      <button class="tab-btn" onclick="switchTab('forecast',this)">10-Day</button>
     </div>
     <div class="tab on" id="tab-today"></div>
     <div class="tab" id="tab-forecast"></div>
   </div>
-
-  <footer>TIGHT LINES v2.0 · Weather: Open-Meteo · AI: Claude · Check local regs 🎣</footer>
+  <footer>TIGHT LINES v2.0 · Weather: Open-Meteo · AI: Claude · Check local regs</footer>
 </div>
 </div>
-
 <script>
-const M = 'claude-sonnet-4-20250514';
-let WX=null, INP={}, fcBuilt=false;
+var MODEL = 'claude-sonnet-4-20250514';
+var WX = null, INP = {}, fcBuilt = false;
 
-// helpers
-const wdirs = d => ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'][Math.round(d/22.5)%16];
-const wdesc = c => c===0?'Clear':c<=2?'Partly cloudy':c===3?'Overcast':c<=49?'Foggy':c<=67?'Rain':c<=77?'Snow':c<=82?'Showers':c<=99?'Storms':'Mixed';
-const season = m => m<=1||m===11?'winter':m<=4?'spring':m<=7?'summer':'fall';
-const estWT = (a,m) => Math.round(([42,44,50,58,66,74,78,79,75,65,54,44][m]||65)*0.7+a*0.3);
-
-function moon(date) {
-  const p=(((date-new Date('2000-01-06'))/86400000)%29.53059+29.53059)%29.53059;
-  if(p<1.85)return{n:'New Moon',e:'🌑',s:'excellent'};
-  if(p<7.38)return{n:'Waxing Crescent',e:'🌒',s:'good'};
-  if(p<9.22)return{n:'First Quarter',e:'🌓',s:'fair'};
-  if(p<14.77)return{n:'Waxing Gibbous',e:'🌔',s:'good'};
-  if(p<16.61)return{n:'Full Moon',e:'🌕',s:'excellent'};
-  if(p<22.15)return{n:'Waning Gibbous',e:'🌖',s:'good'};
-  if(p<23.99)return{n:'Last Quarter',e:'🌗',s:'fair'};
-  return{n:'Waning Crescent',e:'🌘',s:'good'};
+function wdirs(d) {
+  var dirs = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];
+  return dirs[Math.round(d/22.5)%16];
 }
-
-function ptrd(daily) {
-  if(!daily||daily.surface_pressure_max.length<2)return'steady';
-  const d=daily.surface_pressure_max[0]-daily.surface_pressure_max[1];
+function wdesc(c) {
+  if(c===0) return 'Clear';
+  if(c<=2) return 'Partly cloudy';
+  if(c===3) return 'Overcast';
+  if(c<=49) return 'Foggy';
+  if(c<=67) return 'Rain';
+  if(c<=77) return 'Snow';
+  if(c<=82) return 'Showers';
+  if(c<=99) return 'Storms';
+  return 'Mixed';
+}
+function getSeason(m) {
+  if(m<=1||m===11) return 'winter';
+  if(m<=4) return 'spring';
+  if(m<=7) return 'summer';
+  return 'fall';
+}
+function estWT(a,m) {
+  var base = [42,44,50,58,66,74,78,79,75,65,54,44][m] || 65;
+  return Math.round(base*0.7 + a*0.3);
+}
+function getMoon(date) {
+  var known = new Date('2000-01-06');
+  var p = (((date-known)/86400000) % 29.53059 + 29.53059) % 29.53059;
+  if(p<1.85)  return {n:'New Moon',       e:'NM', s:'excellent'};
+  if(p<7.38)  return {n:'Waxing Crescent', e:'WxC',s:'good'};
+  if(p<9.22)  return {n:'First Quarter',   e:'FQ', s:'fair'};
+  if(p<14.77) return {n:'Waxing Gibbous',  e:'WxG',s:'good'};
+  if(p<16.61) return {n:'Full Moon',       e:'FM', s:'excellent'};
+  if(p<22.15) return {n:'Waning Gibbous',  e:'WnG',s:'good'};
+  if(p<23.99) return {n:'Last Quarter',    e:'LQ', s:'fair'};
+  return       {n:'Waning Crescent', e:'WnC',s:'good'};
+}
+function getPT(daily) {
+  if(!daily||daily.surface_pressure_max.length<2) return 'steady';
+  var d = daily.surface_pressure_max[0] - daily.surface_pressure_max[1];
   return d>1.5?'rising':d<-1.5?'falling':'steady';
 }
-
-function sBass({wt,pt,wind,precip,mn,mo}){
-  let s=5;
-  if(wt>=62&&wt<=78)s+=2;else if(wt>=52)s+=1;else if(wt<44||wt>86)s-=2;
-  if(pt==='rising')s+=1;else if(pt==='falling')s-=1;
-  if(mn.s==='excellent')s+=1;else if(mn.s==='fair')s-=0.5;
-  if(precip>0.6)s-=1;if(wind<10)s+=0.5;else if(wind>22)s-=1;
-  if(mo>=3&&mo<=5)s+=1;
+function sBass(wt,pt,wind,precip,mn,mo) {
+  var s=5;
+  if(wt>=62&&wt<=78) s+=2; else if(wt>=52) s+=1; else if(wt<44||wt>86) s-=2;
+  if(pt==='rising') s+=1; else if(pt==='falling') s-=1;
+  if(mn.s==='excellent') s+=1; else if(mn.s==='fair') s-=0.5;
+  if(precip>0.6) s-=1;
+  if(wind<10) s+=0.5; else if(wind>22) s-=1;
+  if(mo>=3&&mo<=5) s+=1;
   return Math.max(1,Math.min(10,Math.round(s)));
 }
-function sCat({wt,pt,precip,mn,mo}){
-  let s=5;
-  if(wt>=65&&wt<=84)s+=2;else if(wt>=55)s+=1;else if(wt<45)s-=2;
-  if(mn.s==='excellent')s+=1.5;else if(mn.s==='fair')s-=0.5;
-  if(precip>0.05&&precip<1)s+=0.5;
-  if(mo>=5&&mo<=8)s+=0.5;if(pt!=='steady')s+=0.5;
+function sCat(wt,pt,precip,mn,mo) {
+  var s=5;
+  if(wt>=65&&wt<=84) s+=2; else if(wt>=55) s+=1; else if(wt<45) s-=2;
+  if(mn.s==='excellent') s+=1.5; else if(mn.s==='fair') s-=0.5;
+  if(precip>0.05&&precip<1) s+=0.5;
+  if(mo>=5&&mo<=8) s+=0.5;
+  if(pt!=='steady') s+=0.5;
   return Math.max(1,Math.min(10,Math.round(s)));
 }
 
-// UI helpers
-function tab(name, btn) {
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('on');});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});
   btn.classList.add('on');
   document.getElementById('tab-'+name).classList.add('on');
-  if(name==='forecast'&&!fcBuilt&&WX)buildFc();
+  if(name==='forecast'&&!fcBuilt&&WX) buildFc();
 }
-function setLoad(on,msg){
-  document.getElementById('loadBox').style.display=on?'block':'none';
-  if(msg)document.getElementById('loadMsg').textContent=msg;
-  document.getElementById('analyzeBtn').disabled=on;
+function setLoad(on,msg) {
+  document.getElementById('loadBox').style.display = on?'block':'none';
+  if(msg) document.getElementById('loadMsg').textContent = msg;
+  document.getElementById('analyzeBtn').disabled = on;
 }
-function showErr(m){const e=document.getElementById('errBox');e.textContent='⚠ '+m;e.style.display='block';}
-function hideErr(){document.getElementById('errBox').style.display='none';}
-
-function locate(){
-  const s=document.getElementById('locSt');
-  s.textContent='Locating...';
-  navigator.geolocation.getCurrentPosition(p=>{
-    document.getElementById('lat').value=p.coords.latitude.toFixed(4);
-    document.getElementById('lon').value=p.coords.longitude.toFixed(4);
-    s.textContent='✓ Location set';
-    setTimeout(()=>s.textContent='',3000);
-  },()=>{s.textContent='Location unavailable — enter manually.';});
+function showErr(m) {
+  var e = document.getElementById('errBox');
+  e.textContent = m;
+  e.style.display = 'block';
+}
+function hideErr() {
+  document.getElementById('errBox').style.display = 'none';
 }
 
-async function fetchWx(lat,lon){
-  const url=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}`+
-    `&current=temperature_2m,relative_humidity_2m,wind_speed_10m,wind_direction_10m,surface_pressure,weather_code,cloud_cover,precipitation`+
-    `&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max,wind_direction_10m_dominant,surface_pressure_max,surface_pressure_min,weather_code`+
-    `&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto&forecast_days=10`;
-  const r=await fetch(url);
-  if(!r.ok)throw new Error('Weather fetch failed ('+r.status+')');
-  return r.json();
+function locate() {
+  var s = document.getElementById('locSt');
+  s.textContent = 'Locating...';
+  navigator.geolocation.getCurrentPosition(
+    function(p) {
+      document.getElementById('lat').value = p.coords.latitude.toFixed(4);
+      document.getElementById('lon').value = p.coords.longitude.toFixed(4);
+      s.textContent = 'Location set';
+      setTimeout(function(){s.textContent='';},3000);
+    },
+    function() { s.textContent = 'Location unavailable. Enter manually.'; }
+  );
 }
 
-async function claude(prompt,maxT=900){
-  const r=await fetch('/api/claude',{
+function fetchWx(lat,lon) {
+  var url = 'https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon
+    +'&current=temperature_2m,relative_humidity_2m,wind_speed_10m,wind_direction_10m,surface_pressure,weather_code,cloud_cover,precipitation'
+    +'&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max,wind_direction_10m_dominant,surface_pressure_max,surface_pressure_min,weather_code'
+    +'&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto&forecast_days=10';
+  return fetch(url).then(function(r){
+    if(!r.ok) throw new Error('Weather error '+r.status);
+    return r.json();
+  });
+}
+
+function callClaude(prompt, maxT) {
+  return fetch('/api/claude',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({model:M,max_tokens:maxT,messages:[{role:'user',content:prompt}]})
+    body: JSON.stringify({model:MODEL, max_tokens:maxT||900, messages:[{role:'user',content:prompt}]})
+  }).then(function(r){
+    return r.json().then(function(data){
+      if(!r.ok) throw new Error(data.error ? data.error.message : 'API error '+r.status);
+      var text = '';
+      for(var i=0;i<data.content.length;i++){
+        if(data.content[i].type==='text') text += data.content[i].text;
+      }
+      return text.trim();
+    });
   });
-  const data=await r.json();
-  if(!r.ok)throw new Error(data.error?.message||'API error '+r.status);
-  return data.content.filter(b=>b.type==='text').map(b=>b.text).join('').trim();
 }
 
-function pj(raw){const c=raw.replace(/^```json?\n?/i,'').replace(/\n?```$/,'').trim();try{return JSON.parse(c);}catch(e){const m=c.match(/\{[\s\S]*\}/);if(m)return JSON.parse(m[0]);throw new Error('Parse error');}}
+function parseJSON(raw) {
+  // Step 1: trim whitespace
+  var s = raw.trim();
+  // Step 2: remove markdown fences
+  if(s.indexOf('```') === 0) {
+    s = s.replace(/^```[a-zA-Z]*/, '').replace(/```$/, '').trim();
+  }
+  // Step 3: try parsing as-is
+  try { return JSON.parse(s); } catch(e1) {}
+  // Step 4: find the outermost { } and try that
+  var start = s.indexOf('{');
+  var end = s.lastIndexOf('}');
+  if(start !== -1 && end !== -1 && end > start) {
+    try { return JSON.parse(s.slice(start, end+1)); } catch(e2) {}
+  }
+  // Step 5: give up and show what we got
+  throw new Error('Could not parse response. Got: ' + s.slice(0,200));
+}
 
-async function run(){
-  const lat=parseFloat(document.getElementById('lat').value);
-  const lon=parseFloat(document.getElementById('lon').value);
-  if(isNaN(lat)||isNaN(lon)){showErr('Enter valid coordinates or tap Use My Location.');return;}
-  INP={
-    waterType:document.getElementById('waterType').value,
-    clarity:document.getElementById('clarity').value,
-    waterTemp:document.getElementById('waterTemp').value,
-    cover:document.getElementById('cover').value,
+function tags(arr) {
+  if(!arr) return '';
+  return arr.map(function(b){
+    return '<span class="tag'+(b.type==='secondary'?' sec':'')+'">'+b.name+'</span>';
+  }).join('');
+}
+function chips(arr) {
+  if(!arr) return '';
+  return arr.map(function(t){ return '<span class="chip">'+t+'</span>'; }).join('');
+}
+
+function run() {
+  var latV = document.getElementById('lat').value.trim();
+  var lonV = document.getElementById('lon').value.trim();
+  var lat = parseFloat(latV);
+  var lon = parseFloat(lonV);
+  if(isNaN(lat)||isNaN(lon)) {
+    showErr('Please enter valid coordinates or tap Use My Location.');
+    return;
+  }
+  INP = {
+    waterType: document.getElementById('waterType').value,
+    clarity:   document.getElementById('clarity').value,
+    waterTemp: document.getElementById('waterTemp').value,
+    cover:     document.getElementById('cover').value
   };
-  hideErr();setLoad(true,'Fetching live weather...');
-  document.getElementById('results').style.display='none';
-  fcBuilt=false;
-  try{
-    const wx=await fetchWx(lat,lon);
-    WX=wx;
-    const c=wx.current,daily=wx.daily,now=new Date(),mo=now.getMonth();
-    const mn=moon(now),pt=ptrd(daily);
-    const airT=Math.round(c.temperature_2m);
-    const waterT=INP.waterTemp?parseInt(INP.waterTemp):estWT(airT,mo);
-    const windS=Math.round(c.wind_speed_10m),windD=wdirs(c.wind_direction_10m);
-    const pInHg=(c.surface_pressure*0.02953).toFixed(2);
-    const hum=Math.round(c.relative_humidity_2m),cloud=Math.round(c.cloud_cover);
-    const precip=c.precipitation||0,seas=season(mo),wxD=wdesc(c.weather_code);
+  hideErr();
+  setLoad(true,'Fetching live weather...');
+  document.getElementById('results').style.display = 'none';
+  fcBuilt = false;
 
-    // render conditions
-    document.getElementById('tab-today').innerHTML=`
-      <div class="card">
-        <div class="card-title">🌤️ Live Conditions</div>
-        <div class="warn-box">📡 Live · Open-Meteo · ${now.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})} · ${wxD}</div>
-        <div class="cond-grid">
-          ${[['Air',airT+'°F'],['Water',waterT+'°F'+(INP.waterTemp?'':'*')],['Wind',windS+' '+windD],['Pressure',pInHg+'"'],['Humidity',hum+'%'],['Clouds',cloud+'%'],['Precip',precip.toFixed(2)+'"'],['Moon',mn.e+' '+mn.n.split(' ').pop()]].map(([k,v])=>`<div class="cond"><div class="cond-v">${v}</div><div class="cond-k">${k}</div></div>`).join('')}
-        </div>
-      </div>
-      <div class="card" id="rptCard"><div class="card-title">🐟 Today's Fishing Report</div><div style="text-align:center;padding:20px"><div class="spinner"></div></div></div>`;
+  fetchWx(lat,lon).then(function(wx) {
+    WX = wx;
+    var c = wx.current, daily = wx.daily;
+    var now = new Date(), mo = now.getMonth();
+    var mn = getMoon(now), pt = getPT(daily);
+    var airT = Math.round(c.temperature_2m);
+    var waterT = INP.waterTemp ? parseInt(INP.waterTemp) : estWT(airT,mo);
+    var windS = Math.round(c.wind_speed_10m);
+    var windD = wdirs(c.wind_direction_10m);
+    var pInHg = (c.surface_pressure*0.02953).toFixed(2);
+    var hum = Math.round(c.relative_humidity_2m);
+    var cloud = Math.round(c.cloud_cover);
+    var precip = c.precipitation || 0;
+    var seas = getSeason(mo);
+    var wxD = wdesc(c.weather_code);
+    var timeStr = now.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
 
-    document.getElementById('results').style.display='block';
-    document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('on',i===0));
-    document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('on',i===0));
+    var condHTML = [
+      ['Air',airT+'F'],['Water',waterT+'F'+(INP.waterTemp?'':'*')],
+      ['Wind',windS+' '+windD],['Pressure',pInHg+'"'],
+      ['Humidity',hum+'%'],['Clouds',cloud+'%'],
+      ['Precip',precip.toFixed(2)+'"'],['Moon',mn.n]
+    ].map(function(x){
+      return '<div class="cond"><div class="cond-v">'+x[1]+'</div><div class="cond-k">'+x[0]+'</div></div>';
+    }).join('');
+
+    document.getElementById('tab-today').innerHTML =
+      '<div class="card">'
+      +'<div class="card-title">Live Conditions</div>'
+      +'<div class="warn-box">Live · Open-Meteo · '+timeStr+' · '+wxD+'</div>'
+      +'<div class="cond-grid">'+condHTML+'</div>'
+      +'</div>'
+      +'<div class="card" id="rptCard"><div class="card-title">Today\'s Fishing Report</div>'
+      +'<div style="text-align:center;padding:20px"><div class="spinner"></div></div></div>';
+
+    document.getElementById('results').style.display = 'block';
+    document.querySelectorAll('.tab-btn').forEach(function(b,i){b.classList.toggle('on',i===0);});
+    document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('on',i===0);});
     setLoad(false);
 
-    // fetch AI
-    const prompt=`You are an expert bass and channel catfish fishing guide for small ponds in Northern Virginia.
+    var prompt = 'You are an expert bass and channel catfish fishing guide for small ponds in Northern Virginia.\n\n'
+      +'CONDITIONS: '+now.toDateString()+' ('+seas+')\n'
+      +'Air: '+airT+'F | Water: '+waterT+'F | Wind: '+windS+' mph '+windD+'\n'
+      +'Pressure: '+pInHg+' inches '+pt+' | Cloud: '+cloud+'% | Humidity: '+hum+'%\n'
+      +'Precip: '+precip.toFixed(2)+' inches | Sky: '+wxD+' | Moon: '+mn.n+' solunar '+mn.s+'\n'
+      +'Water body: '+INP.waterType+' | Clarity: '+INP.clarity+' | Cover: '+INP.cover+'\n\n'
+      +'IMPORTANT: Respond with a single raw JSON object and absolutely nothing else. No explanation, no markdown, no code fences.\n'
+      +'The JSON must have exactly these keys:\n'
+      +'bassScore (integer 1-10), bassVerdict (string), bassActivity (string), '
+      +'bassTimes (array of 2 strings), bassWhere (string), '
+      +'bassBaits (array of objects with name and type fields where type is primary or secondary), '
+      +'bassTips (string), catScore (integer 1-10), catVerdict (string), catActivity (string), '
+      +'catTimes (array of 2 strings), catWhere (string), '
+      +'catBaits (array of objects with name and type fields), catSetup (string), summary (string).\n'
+      +'Be specific on WHERE: compass direction, depth, structure. Factor wind for warmest shoreline.';
 
-CONDITIONS: ${now.toDateString()} (${seas})
-Air: ${airT}°F | Water: ${waterT}°F | Wind: ${windS} mph ${windD}
-Pressure: ${pInHg}" ${pt} | Cloud: ${cloud}% | Humidity: ${hum}%
-Precip: ${precip.toFixed(2)}" | Sky: ${wxD} | Moon: ${mn.n} ${mn.e} (solunar: ${mn.s})
-Water: ${INP.waterType} | Clarity: ${INP.clarity} | Cover: ${INP.cover}
-
-Return JSON ONLY (no markdown):
-{"bassScore":number,"bassVerdict":"string","bassActivity":"string","bassTimes":["string","string"],"bassWhere":"string","bassBaits":[{"name":"string","type":"primary or secondary"}],"bassTips":"string","catScore":number,"catVerdict":"string","catActivity":"string","catTimes":["string","string"],"catWhere":"string","catBaits":[{"name":"string","type":"primary or secondary"}],"catSetup":"string","summary":"string"}
-
-Be very specific on WHERE (compass direction, depth, structure). Factor wind for warmest shoreline. Keep strings concise.`;
-
-    const raw=await claude(prompt,900);
-    const r=pj(raw);
-    const tags=arr=>(arr||[]).map(b=>`<span class="tag${b.type==='secondary'?' sec':''}">${b.name}</span>`).join('');
-    const chips=arr=>(arr||[]).map(t=>`<span class="chip">${t}</span>`).join('');
-
-    document.getElementById('rptCard').innerHTML=`
-      <div class="card-title">🐟 Today's Fishing Report</div>
-      <div class="score-row">
-        <div class="sbadge" style="background:#3a5a3c"><div class="snum">${r.bassScore}/10</div><div class="slbl">Largemouth Bass</div><div class="ssub">${r.bassVerdict||''}</div></div>
-        <div class="sbadge" style="background:#2c6e7f"><div class="snum">${r.catScore}/10</div><div class="slbl">Channel Catfish</div><div class="ssub">${r.catVerdict||''}</div></div>
-      </div>
-      <div class="fsec">
-        <div class="fname">Largemouth Bass <em>${r.bassActivity||''}</em></div>
-        <div class="rec"><h4>Best Times</h4><div class="chips">${chips(r.bassTimes)}</div></div>
-        <div class="rec"><h4>Where to Target</h4><p>${r.bassWhere||''}</p></div>
-        <div class="rec"><h4>Top Baits</h4><div class="tags">${tags(r.bassBaits)}</div></div>
-        <div class="rec"><h4>Presentation Tips</h4><p>${r.bassTips||''}</p></div>
-      </div>
-      <div class="fsec cat">
-        <div class="fname">Channel Catfish <em>${r.catActivity||''}</em></div>
-        <div class="rec"><h4>Best Times</h4><div class="chips">${chips(r.catTimes)}</div></div>
-        <div class="rec"><h4>Where to Target</h4><p>${r.catWhere||''}</p></div>
-        <div class="rec"><h4>Top Baits</h4><div class="tags">${tags(r.catBaits)}</div></div>
-        <div class="rec"><h4>Setup Tips</h4><p>${r.catSetup||''}</p></div>
-      </div>
-      <div class="divider"></div>
-      <div class="analysis"><p>${r.summary||''}</p></div>`;
-
-  }catch(e){setLoad(false);showErr(e.message);}
-}
-
-function buildFc(){
-  fcBuilt=true;
-  const daily=WX.daily;
-  const days=daily.time.map((ds,i)=>{
-    const date=new Date(ds+'T12:00:00'),mo=date.getMonth();
-    const aH=Math.round(daily.temperature_2m_max[i]),aL=Math.round(daily.temperature_2m_min[i]);
-    const wt=(i===0&&INP.waterTemp)?parseInt(INP.waterTemp):estWT((aH+aL)/2,mo);
-    const wind=Math.round(daily.wind_speed_10m_max[i]),windD=wdirs(daily.wind_direction_10m_dominant[i]);
-    const precip=daily.precipitation_sum[i]||0;
-    const prevP=i>0?daily.surface_pressure_max[i-1]:daily.surface_pressure_max[i];
-    const pt=daily.surface_pressure_max[i]>prevP+1.5?'rising':daily.surface_pressure_max[i]<prevP-1.5?'falling':'steady';
-    const pHigh=(daily.surface_pressure_max[i]*0.02953).toFixed(2);
-    const mn=moon(date),seas=season(mo);
-    const bS=sBass({wt,pt,wind,precip,mn,mo}),cS=sCat({wt,pt,precip,mn,mo});
-    const dow=date.toLocaleDateString('en-US',{weekday:'short'});
-    const dl=date.toLocaleDateString('en-US',{month:'short',day:'numeric'});
-    const dow2=date.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
-    const wxD=wdesc(daily.weather_code[i]);
-    return{i,mo,seas,aH,aL,wt,wind,windD,precip,pt,pHigh,mn,bS,cS,dow,dl,dow2,wxD,daysOut:i};
-  });
-  const bBest=days.reduce((b,d)=>d.bS>days[b].bS?d.i:b,0);
-  const cBest=days.reduce((b,d)=>d.cS>days[b].cS?d.i:b,0);
-
-  document.getElementById('tab-forecast').innerHTML=`
-    <div class="card">
-      <div class="card-title">📅 10-Day Fishing Outlook</div>
-      <p style="font-size:.74rem;color:#666;margin-bottom:14px;font-family:'IBM Plex Mono',monospace;line-height:1.5">Scores 1–10 · <strong style="color:#3a5a3c">Tap any day</strong> for AI detail.</p>
-      <div class="fc-list">
-        ${days.map(d=>`
-        <div class="fday" id="fd${d.i}" onclick="toggleDay(${d.i})">
-          <div class="fday-top">
-            <div>
-              <div class="fday-dow">${d.dow}</div>
-              <div class="fday-date">${d.dl}</div>
-              <div class="fbadges">
-                ${d.i===bBest?'<span class="fbest">🏆 Best Bass</span>':''}
-                ${d.i===cBest?'<span class="fbest cat">🏆 Best Cats</span>':''}
-              </div>
-            </div>
-            <div class="fscores">
-              <div class="fscore" style="background:#3a5a3c">${d.bS}<span class="fscore-lbl">Bass</span></div>
-              <div class="fscore" style="background:#2c6e7f">${d.cS}<span class="fscore-lbl">Cats</span></div>
-            </div>
-          </div>
-          <div class="bar"><div class="bar-f" style="width:${d.bS*10}%;background:#3a5a3c"></div></div>
-          <div class="bar"><div class="bar-f" style="width:${d.cS*10}%;background:#2c6e7f"></div></div>
-          <div class="fchips">
-            <span class="fchip">🌡 ${d.aH}°/${d.aL}°</span>
-            <span class="fchip">💧~${d.wt}°F</span>
-            <span class="fchip">💨${d.wind}mph ${d.windD}</span>
-            <span class="fchip">${d.precip>0.1?'🌧'+d.precip.toFixed(1)+'"':'☀ Dry'}</span>
-            <span class="fchip">${d.mn.e} ${d.mn.n}</span>
-            <span class="fchip">P:${d.pt}</span>
-          </div>
-          <div class="fhint">tap for AI detail ▾</div>
-          <div class="fdetail" id="fdd${d.i}"></div>
-        </div>`).join('')}
-      </div>
-    </div>`;
-}
-
-async function toggleDay(i){
-  const card=document.getElementById('fd'+i);
-  const detail=document.getElementById('fdd'+i);
-  const isOpen=card.classList.contains('open');
-  document.querySelectorAll('.fday').forEach(d=>d.classList.remove('open'));
-  if(!isOpen){
-    card.classList.add('open');
-    if(!detail.dataset.loaded){
-      detail.innerHTML='<div style="display:flex;align-items:center;padding:4px 0"><div class="spinner-sm"></div><span style="font-family:\'IBM Plex Mono\',monospace;font-size:.62rem;color:#888">Generating AI forecast...</span></div>';
-      const daily=WX.daily,ds=daily.time[i];
-      const date=new Date(ds+'T12:00:00'),mo=date.getMonth();
-      const aH=Math.round(daily.temperature_2m_max[i]),aL=Math.round(daily.temperature_2m_min[i]);
-      const wt=(i===0&&INP.waterTemp)?parseInt(INP.waterTemp):estWT((aH+aL)/2,mo);
-      const wind=Math.round(daily.wind_speed_10m_max[i]),windD=wdirs(daily.wind_direction_10m_dominant[i]);
-      const precip=daily.precipitation_sum[i]||0;
-      const prevP=i>0?daily.surface_pressure_max[i-1]:daily.surface_pressure_max[i];
-      const pt=daily.surface_pressure_max[i]>prevP+1.5?'rising':daily.surface_pressure_max[i]<prevP-1.5?'falling':'steady';
-      const pHigh=(daily.surface_pressure_max[i]*0.02953).toFixed(2);
-      const mn=moon(date),seas=season(mo);
-      const dow2=date.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
-      const wxD=wdesc(daily.weather_code[i]);
-      const prompt=`You are an expert bass/catfish fishing guide for a small pond in Northern Virginia.
-
-Forecast: ${dow2} (${i===0?'today':i===1?'tomorrow':i+' days out'})
-Air: ${aH}°/${aL}°F | Water est: ${wt}°F | Wind: ${wind} mph ${windD}
-Pressure: ~${pHigh}" ${pt} | Precip: ${precip.toFixed(2)}" | ${wxD}
-Moon: ${mn.n} ${mn.e} (solunar: ${mn.s}) | Season: ${seas}
-Water: ${INP.waterType} | Clarity: ${INP.clarity} | Cover: ${INP.cover}
-${i>5?'Note: longer-range — treat as general outlook.':''}
-
-Return JSON ONLY (no markdown):
-{"windows":"string","bassWhere":"string","bassBaits":[{"name":"string","type":"primary or secondary"}],"catWhere":"string","catBaits":[{"name":"string","type":"primary or secondary"}],"keyFactor":"string"}`;
-      try{
-        const raw=await claude(prompt,600);
-        const d=pj(raw);
-        const tags=arr=>(arr||[]).map(b=>`<span class="tag${b.type==='secondary'?' sec':''}">${b.name}</span>`).join('');
-        detail.innerHTML=`
-          <div class="det-lbl">Best Windows</div><div class="det-txt">${d.windows}</div>
-          <div class="det-lbl">🐟 Bass — Where &amp; How</div><div class="det-txt">${d.bassWhere}<div class="tags" style="margin-top:5px">${tags(d.bassBaits)}</div></div>
-          <div class="det-lbl">🐈 Catfish — Where &amp; How</div><div class="det-txt">${d.catWhere}<div class="tags" style="margin-top:5px">${tags(d.catBaits)}</div></div>
-          <div class="det-lbl">Key Factor</div><div class="det-txt">${d.keyFactor}</div>`;
-        detail.dataset.loaded='true';
-      }catch(e){
-        detail.innerHTML=`<div style="color:#9e3a1a;font-size:.8rem">⚠ ${e.message}</div>`;
+    callClaude(prompt, 900).then(function(raw) {
+      document.getElementById('rptCard').innerHTML =
+        '<div class="card-title">DEBUG - Raw AI Response</div>'
+        +'<div style="font-size:.65rem;font-family:monospace;white-space:pre-wrap;word-break:break-all;background:#f0f0f0;padding:10px;border-radius:2px;max-height:300px;overflow-y:auto">'+raw.replace(/</g,'&lt;')+'</div>';
+      try {
+        var r = parseJSON(raw);
+        document.getElementById('rptCard').innerHTML =
+          '<div class="card-title">Today\'s Fishing Report</div>'
+          +'<div class="score-row">'
+          +'<div class="sbadge" style="background:#3a5a3c"><div class="snum">'+r.bassScore+'/10</div><div class="slbl">Largemouth Bass</div><div class="ssub">'+(r.bassVerdict||'')+'</div></div>'
+          +'<div class="sbadge" style="background:#2c6e7f"><div class="snum">'+r.catScore+'/10</div><div class="slbl">Channel Catfish</div><div class="ssub">'+(r.catVerdict||'')+'</div></div>'
+          +'</div>'
+          +'<div class="fsec">'
+          +'<div class="fname">Largemouth Bass <em>'+(r.bassActivity||'')+'</em></div>'
+          +'<div class="rec"><h4>Best Times</h4><div class="chips">'+chips(r.bassTimes)+'</div></div>'
+          +'<div class="rec"><h4>Where to Target</h4><p>'+(r.bassWhere||'')+'</p></div>'
+          +'<div class="rec"><h4>Top Baits</h4><div class="tags">'+tags(r.bassBaits)+'</div></div>'
+          +'<div class="rec"><h4>Presentation Tips</h4><p>'+(r.bassTips||'')+'</p></div>'
+          +'</div>'
+          +'<div class="fsec cat">'
+          +'<div class="fname">Channel Catfish <em>'+(r.catActivity||'')+'</em></div>'
+          +'<div class="rec"><h4>Best Times</h4><div class="chips">'+chips(r.catTimes)+'</div></div>'
+          +'<div class="rec"><h4>Where to Target</h4><p>'+(r.catWhere||'')+'</p></div>'
+          +'<div class="rec"><h4>Top Baits</h4><div class="tags">'+tags(r.catBaits)+'</div></div>'
+          +'<div class="rec"><h4>Setup Tips</h4><p>'+(r.catSetup||'')+'</p></div>'
+          +'</div>'
+          +'<div class="divider"></div>'
+          +'<div class="analysis"><p>'+(r.summary||'')+'</p></div>';
+      } catch(e) {
+        document.getElementById('rptCard').innerHTML =
+          '<div class="card-title">Today\'s Fishing Report</div>'
+          +'<div class="err-box">Parse error: '+e.message+'</div>';
       }
+    }).catch(function(e) {
+      document.getElementById('rptCard').innerHTML =
+        '<div class="card-title">Today\'s Fishing Report</div>'
+        +'<div class="err-box">AI error: '+e.message+'</div>';
+    });
+
+  }).catch(function(e) {
+    setLoad(false);
+    showErr('Weather error: '+e.message);
+  });
+}
+
+function buildFc() {
+  fcBuilt = true;
+  var daily = WX.daily;
+  var days = [];
+  for(var i=0;i<daily.time.length;i++) {
+    var date = new Date(daily.time[i]+'T12:00:00');
+    var mo = date.getMonth();
+    var aH = Math.round(daily.temperature_2m_max[i]);
+    var aL = Math.round(daily.temperature_2m_min[i]);
+    var wt = (i===0&&INP.waterTemp) ? parseInt(INP.waterTemp) : estWT((aH+aL)/2, mo);
+    var wind = Math.round(daily.wind_speed_10m_max[i]);
+    var windD = wdirs(daily.wind_direction_10m_dominant[i]);
+    var precip = daily.precipitation_sum[i] || 0;
+    var prevP = i>0 ? daily.surface_pressure_max[i-1] : daily.surface_pressure_max[i];
+    var pt = daily.surface_pressure_max[i]>prevP+1.5?'rising':daily.surface_pressure_max[i]<prevP-1.5?'falling':'steady';
+    var pHigh = (daily.surface_pressure_max[i]*0.02953).toFixed(2);
+    var mn = getMoon(date);
+    var seas = getSeason(mo);
+    var bS = sBass(wt,pt,wind,precip,mn,mo);
+    var cS = sCat(wt,pt,precip,mn,mo);
+    var dow = date.toLocaleDateString('en-US',{weekday:'short'});
+    var dl = date.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+    var wxD = wdesc(daily.weather_code[i]);
+    days.push({i:i,mo:mo,seas:seas,aH:aH,aL:aL,wt:wt,wind:wind,windD:windD,precip:precip,pt:pt,pHigh:pHigh,mn:mn,bS:bS,cS:cS,dow:dow,dl:dl,wxD:wxD,daysOut:i});
+  }
+  var bBest=0, cBest=0;
+  for(var j=0;j<days.length;j++){
+    if(days[j].bS>days[bBest].bS) bBest=j;
+    if(days[j].cS>days[cBest].cS) cBest=j;
+  }
+  var html = '<div class="card"><div class="card-title">10-Day Fishing Outlook</div>'
+    +'<p style="font-size:.74rem;color:#666;margin-bottom:14px;font-family:IBM Plex Mono,monospace;line-height:1.5">Scores 1-10. Tap any day for AI detail.</p>'
+    +'<div class="fc-list">';
+  for(var k=0;k<days.length;k++){
+    var d=days[k];
+    html += '<div class="fday" id="fd'+d.i+'" onclick="toggleDay('+d.i+')">'
+      +'<div class="fday-top">'
+      +'<div><div class="fday-dow">'+d.dow+'</div><div class="fday-date">'+d.dl+'</div>'
+      +'<div class="fbadges">'+(d.i===bBest?'<span class="fbest">Best Bass</span>':'')+(d.i===cBest?'<span class="fbest cat">Best Cats</span>':'')+'</div></div>'
+      +'<div class="fscores">'
+      +'<div class="fscore" style="background:#3a5a3c">'+d.bS+'<span class="fscore-lbl">Bass</span></div>'
+      +'<div class="fscore" style="background:#2c6e7f">'+d.cS+'<span class="fscore-lbl">Cats</span></div>'
+      +'</div></div>'
+      +'<div class="bar"><div class="bar-f" style="width:'+(d.bS*10)+'%;background:#3a5a3c"></div></div>'
+      +'<div class="bar"><div class="bar-f" style="width:'+(d.cS*10)+'%;background:#2c6e7f"></div></div>'
+      +'<div class="fchips">'
+      +'<span class="fchip">'+d.aH+'/'+d.aL+'F</span>'
+      +'<span class="fchip">~'+d.wt+'F water</span>'
+      +'<span class="fchip">'+d.wind+'mph '+d.windD+'</span>'
+      +'<span class="fchip">'+(d.precip>0.1?d.precip.toFixed(1)+' rain':'Dry')+'</span>'
+      +'<span class="fchip">'+d.mn.n+'</span>'
+      +'<span class="fchip">P:'+d.pt+'</span>'
+      +'</div>'
+      +'<div class="fhint">tap for AI detail</div>'
+      +'<div class="fdetail" id="fdd'+d.i+'"></div>'
+      +'</div>';
+  }
+  html += '</div></div>';
+  document.getElementById('tab-forecast').innerHTML = html;
+}
+
+function toggleDay(i) {
+  var card = document.getElementById('fd'+i);
+  var detail = document.getElementById('fdd'+i);
+  var isOpen = card.classList.contains('open');
+  document.querySelectorAll('.fday').forEach(function(d){d.classList.remove('open');});
+  if(!isOpen) {
+    card.classList.add('open');
+    if(!detail.dataset.loaded) {
+      detail.innerHTML = '<div style="display:flex;align-items:center;padding:6px 0"><div class="spinner-sm"></div><span style="font-family:IBM Plex Mono,monospace;font-size:.62rem;color:#888">Generating AI forecast...</span></div>';
+      var daily = WX.daily;
+      var date = new Date(daily.time[i]+'T12:00:00');
+      var mo = date.getMonth();
+      var aH = Math.round(daily.temperature_2m_max[i]);
+      var aL = Math.round(daily.temperature_2m_min[i]);
+      var wt = (i===0&&INP.waterTemp)?parseInt(INP.waterTemp):estWT((aH+aL)/2,mo);
+      var wind = Math.round(daily.wind_speed_10m_max[i]);
+      var windD = wdirs(daily.wind_direction_10m_dominant[i]);
+      var precip = daily.precipitation_sum[i]||0;
+      var prevP = i>0?daily.surface_pressure_max[i-1]:daily.surface_pressure_max[i];
+      var pt = daily.surface_pressure_max[i]>prevP+1.5?'rising':daily.surface_pressure_max[i]<prevP-1.5?'falling':'steady';
+      var pHigh = (daily.surface_pressure_max[i]*0.02953).toFixed(2);
+      var mn = getMoon(date);
+      var seas = getSeason(mo);
+      var dow2 = date.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+      var wxD = wdesc(daily.weather_code[i]);
+      var dOut = i===0?'today':i===1?'tomorrow':i+' days out';
+
+      var prompt = 'You are a bass and catfish fishing guide for a small pond in Northern Virginia.\n\n'
+        +'Forecast: '+dow2+' ('+dOut+')\n'
+        +'Air: '+aH+'/'+aL+'F | Water est: '+wt+'F | Wind: '+wind+' mph '+windD+'\n'
+        +'Pressure: '+pHigh+' inches '+pt+' | Precip: '+precip.toFixed(2)+' inches | '+wxD+'\n'
+        +'Moon: '+mn.n+' solunar '+mn.s+' | Season: '+seas+'\n'
+        +'Water: '+INP.waterType+' | Clarity: '+INP.clarity+' | Cover: '+INP.cover+'\n'
+        +(i>5?'Note: longer-range forecast, treat as general outlook.\n':'\n')
+        +'IMPORTANT: Respond with a single raw JSON object and nothing else. No markdown, no explanation.\n'
+        +'Keys: windows (string), bassWhere (string), '
+        +'bassBaits (array of objects with name and type where type is primary or secondary), '
+        +'catWhere (string), catBaits (array of objects with name and type), keyFactor (string).';
+
+      callClaude(prompt, 600).then(function(raw) {
+        try {
+          var d = parseJSON(raw);
+          var t = function(arr){
+            if(!arr) return '';
+            return arr.map(function(b){return '<span class="tag'+(b.type==='secondary'?' sec':'')+'">'+(b.name||b)+'</span>';}).join('');
+          };
+          detail.innerHTML =
+            '<div class="det-lbl">Best Windows</div><div class="det-txt">'+(d.windows||'')+'</div>'
+            +'<div class="det-lbl">Bass - Where and How</div><div class="det-txt">'+(d.bassWhere||'')+'<div class="tags" style="margin-top:5px">'+t(d.bassBaits)+'</div></div>'
+            +'<div class="det-lbl">Catfish - Where and How</div><div class="det-txt">'+(d.catWhere||'')+'<div class="tags" style="margin-top:5px">'+t(d.catBaits)+'</div></div>'
+            +'<div class="det-lbl">Key Factor</div><div class="det-txt">'+(d.keyFactor||'')+'</div>';
+          detail.dataset.loaded = 'true';
+        } catch(e) {
+          detail.innerHTML = '<div style="color:#9e3a1a;font-size:.8rem">Parse error: '+e.message+'</div>';
+        }
+      }).catch(function(e){
+        detail.innerHTML = '<div style="color:#9e3a1a;font-size:.8rem">AI error: '+e.message+'</div>';
+      });
     }
   }
 }
