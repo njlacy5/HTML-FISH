@@ -138,6 +138,10 @@ footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font
     <button class="btn-main" id="analyzeBtn" onclick="run()">&#127907; ANALYZE CONDITIONS</button>
     <button class="btn-sec" onclick="locate()">&#128205; USE MY LOCATION</button>
     <div class="loc-st" id="locSt"></div>
+    <div style="margin-top:10px;font-family:IBM Plex Mono,monospace;font-size:.62rem;color:#888">
+      API Key: <span id="keyStatus">not set</span> 
+      <button onclick="setKey()" style="background:none;border:none;color:#2c6e7f;font-family:IBM Plex Mono,monospace;font-size:.62rem;cursor:pointer;text-decoration:underline">change</button>
+    </div>
   </div>
   <div class="err-box" id="errBox" style="display:none"></div>
   <div class="loading" id="loadBox"><div class="spinner"></div><p id="loadMsg"></p></div>
@@ -153,7 +157,19 @@ footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font
 </div>
 </div>
 <script>
-var MODEL = 'claude-sonnet-4-20250514';
+function setKey() {
+  var k = prompt('Paste your Anthropic API key (sk-ant-...):');
+  if(k) { localStorage.setItem("tl_api_key", k.trim()); updateKeyStatus(); }
+}
+function updateKeyStatus() {
+  var el = document.getElementById("keyStatus");
+  if(!el) return;
+  var k = localStorage.getItem("tl_api_key") || "";
+  el.textContent = k ? k.slice(0,12)+"..." : "not set";
+  el.style.color = k ? "#3a5a3c" : "#9e3a1a";
+}
+window.addEventListener("load", updateKeyStatus);
+var MODEL = 'claude-sonnet-4-5';
 var WX = null, INP = {}, fcBuilt = false;
 
 function wdirs(d) {
@@ -264,17 +280,35 @@ function fetchWx(lat,lon) {
   });
 }
 
+function getKey() {
+  var k = localStorage.getItem('tl_api_key') || '';
+  if(!k) {
+    k = prompt('Enter your Anthropic API key (sk-ant-...):');
+    if(k) localStorage.setItem('tl_api_key', k);
+  }
+  return k;
+}
 function callClaude(prompt, maxT) {
-  return fetch('/api/claude',{
+  var key = getKey();
+  if(!key) throw new Error('No API key set');
+  return fetch('https://api.anthropic.com/v1/messages',{
     method:'POST',
-    headers:{'Content-Type':'application/json'},
+    headers:{
+      'Content-Type':'application/json',
+      'x-api-key': key,
+      'anthropic-version':'2023-06-01',
+      'anthropic-dangerous-direct-browser-access':'true'
+    },
     body: JSON.stringify({model:MODEL, max_tokens:maxT||900, messages:[{role:'user',content:prompt}]})
   }).then(function(r){
     return r.json().then(function(data){
-      if(!r.ok) throw new Error(data.error ? data.error.message : 'API error '+r.status);
+      if(!r.ok) {
+        if(r.status===401) { localStorage.removeItem("tl_api_key"); }
+        throw new Error(data.error ? data.error.message : 'API error '+r.status);
+      }
       var text = '';
       for(var i=0;i<data.content.length;i++){
-        if(data.content[i].type==='text') text += data.content[i].text;
+        if(data.content[i].type==="text") text += data.content[i].text;
       }
       return text.trim();
     });
